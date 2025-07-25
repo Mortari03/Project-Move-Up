@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header fixo com estilo base */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 17px 40px;
+  background-color: #252525;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centraliza verticalmente */
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo alinhada à esquerda e centralizada verticalmente */
+.logo-wrapper {
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+/* Ambas as logos ocupam a mesma posição */
+.top-logo,
+.floating-logo {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  height: 40px;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* Oculta logo grande no modo flutuante */
+.header.floating .top-logo {
+  opacity: 0;
+  transform: scale(1.1) translateY(-40%);
+}
+
+/* Mostra logo pequena no modo flutuante */
+.floating-logo {
+  opacity: 0;
+  transform: scale(0.4) translateY(-50%);
+}
+
+.header.floating .floating-logo {
+  opacity: 1;
+  transform: scale(1) translateY(-50%);
+}
+
+/* Header em modo flutuante */
+.floating {
+  top: 15px;
+  max-width: 60%;
+  padding: 12px 30px;
+  border-radius: 70px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.8s ease;
+}
+
+/* Navegação à direita */
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ff88a8;
+  transform: translateY(-2px);
+}
+
+/* Botão de destaque */
+.collorbottoncliente a {
+  background: linear-gradient(135deg, #ff88a8, #d65f7e);
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.collorbottoncliente a:hover {
+  background: #282828;
+  color: #fff;
+}

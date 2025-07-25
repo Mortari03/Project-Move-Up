@@ -1,0 +1,104 @@
+.wolff-footer {
+  max-height: 100%;
+  background-color: #fff230;
+  color: black;
+  padding: 20px 40px;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+
+.wolff-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.wolff-footer-year {
+  flex: 1;
+  min-width: 120px;
+  font-weight: normal;
+}
+
+.wolff-footer-links {
+  flex: 4;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.wolff-footer-links > div {
+  flex: 1;
+  min-width: 140px;
+}
+
+.wolff-footer-links strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.wolff-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wolff-footer-links li {
+  margin: 6px 0;
+}
+
+.wolff-footer-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.wolff-footer-links a:hover {
+  text-decoration: underline;
+}
+
+.back-to-top a {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.back-to-top a:hover {
+  text-decoration: underline;
+}
+
+/* Logo grande com efeito esticado */
+.wolff-footer-logo {
+  font-size: 10vw;
+  font-weight: 900;
+  font-family: 'Arial Black', Arial, sans-serif;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  transform-origin: center center;
+  margin-top: 20px;
+  user-select: none;
+  transition: transform 0.3s ease-out;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .wolff-footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .wolff-footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .wolff-footer-logo {
+    font-size: 20vw;
+    transform: scaleX(0.9);
+    text-align: center;
+  }
+}

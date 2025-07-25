@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+.client-area-page {
+  background-color: #232323;
+  color: #eaeaea;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-area-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ff88a8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.client-area-page p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+  text-align: center;
+  max-width: 420px;
+}
+
+.client-area-page form {
+  background-color: #000000;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.client-area-page input {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #eaeaea;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.client-area-page input:focus {
+  outline: none;
+  border-color: #ff88a8;
+  box-shadow: 0 0 8px #ff88a8;
+}
+
+.client-area-page button {
+  background-color: #ff88a8;
+  color: #000000;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.client-area-page button:hover {
+  background-color: #e06c96;
+  transform: translateY(-2px);
+}
+
+.btn-register {
+  background-color: transparent;
+  border: 2px solid #ff88a8;
+  color: #ff88a8;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-register:hover {
+  background-color: #ff88a8;
+  color: #000000;
+  transform: translateY(-2px);
+}

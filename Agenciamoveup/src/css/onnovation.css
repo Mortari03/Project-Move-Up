@@ -1,0 +1,46 @@
+/* Importa a fonte Outfit */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+.innovation-page {
+  background-color: #232323;
+  color: #eaeaea;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+}
+
+.innovation-page h1 {
+  font-size: 3rem;
+  color: #ff88a8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.innovation-page p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.innovation-page ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.innovation-page li {
+  background-color: #000000;
+  border-left: 4px solid #ff88a8;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.innovation-page li:hover {
+  background-color: #1a1a1a;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+.faq-page {
+  background-color: #232323;
+  color: #eaeaea;
+  padding: 20rem 2rem;
+  min-height: 108vh;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.faq-page h1 {
+  font-size: 3rem;
+  color: #ff88a8;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.faq-page h3 {
+  font-size: 1.5rem;
+  color: #ff88a8;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  max-width: 800px;
+}
+
+.faq-page p {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  border-left: 3px solid #ff88a8;
+  padding-left: 1rem;
+}
