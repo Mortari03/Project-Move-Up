@@ -3,37 +3,47 @@ import "../css/rodape.css";
 
 function Footer() {
   const [scaleY, setScaleY] = useState(1);
+// Dentro do useEffect → ajustado com "translateY" extra se esticada
+const logoRef = useRef(null);
 
-  useEffect(() => {
-    function handleScroll() {
-      const scrollY = window.scrollY;
+useEffect(() => {
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
 
-      // Parâmetros de controle
-      const startScroll = 1920;
-      const endScroll = 2500;
-      const maxScale = 1.5;
+    const startScroll = docHeight - windowHeight - 300;
+    const endScroll = docHeight - windowHeight;
 
-      if (scrollY < startScroll) {
-        setScaleY(1); // antes de 1920px, normal
-      } else if (scrollY >= startScroll && scrollY <= endScroll) {
-        const progress = (scrollY - startScroll) / (endScroll - startScroll); // 0 a 1
-        const scale = 1 + progress * (maxScale - 1); // 1 a maxScale
-        setScaleY(scale);
-      } else {
-        setScaleY(1); // depois de 2500px, volta ao normal
+    if (scrollY < startScroll) {
+      setScaleY(1);
+      if (logoRef.current) logoRef.current.style.transform = `scaleY(1) translateY(0px)`;
+    } else if (scrollY >= startScroll && scrollY <= endScroll) {
+      const progress = (scrollY - startScroll) / (endScroll - startScroll);
+      const originalHeight = 150;
+      const maxScale = windowHeight / originalHeight;
+      const scale = 1 + progress * (maxScale - 1);
+      const translateY = progress * 60; // move 60px para baixo no final
+      setScaleY(scale);
+      if (logoRef.current) {
+        logoRef.current.style.transform = `scaleY(${scale}) translateY(${translateY}px)`;
       }
+    } else {
+      setScaleY(1);
+      if (logoRef.current) logoRef.current.style.transform = `scaleY(1) translateY(0px)`;
     }
+  }
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // executa na primeira carga
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <footer className="wolff-footer">
       <div className="wolff-footer-top">
-        <div className="wolff-footer-year">2025 Wolff Olins</div>
+        <div className="wolff-footer-year">2025 Move UP</div>
         <div className="wolff-footer-links">
           <div>
             <strong>Talk to us or ask us anything.</strong>
@@ -57,11 +67,13 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div
-        className="wolff-footer-logo"
-        style={{ transform: `scaleY(${scaleY})` }}
-      >
-        Wolff Olins
+      <div className="wolff-footer-logo-wrapper">
+        <img
+          src="/MoveUp Logo.png"
+          alt="Move UP Logo"
+          className="wolff-footer-logo"
+          style={{ transform: `scaleY(${scaleY})` }}
+        />
       </div>
     </footer>
   );

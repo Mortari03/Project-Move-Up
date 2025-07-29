@@ -88,28 +88,30 @@ function Home() {
         </div>
       </section>
 
-      <div className="home-body">
-        <section ref={heroRef} className="hero">
-          <div className="hero-content stacked">
-            <div className="block">
-              <h2>Agência Digital Inovadora</h2>
-              <p>
-                Transformamos negócios por meio de design, estratégia e tecnologias modernas. Conte
-                com a gente do conceito à execução.
-              </p>
-            </div>
-            <hr />
-            <div className="block">
-              <h3>Vamos criar algo memorável juntos?</h3>
-            </div>
-            <div className="cta-button">
-              <a href="#contact" className="btn-secondary">
-                Fale Conosco
-              </a>
-            </div>
+        <div className="home-body">
+      <section ref={heroRef} className="hero">
+        <div className="hero-content stacked">
+          <div className="block">
+            <h2>Estratégia. Design. Resultado.</h2>
+            <p>
+              Criamos experiências digitais que posicionam sua marca no topo. Unimos criatividade, performance e tecnologia para impulsionar negócios com propósito.
+            </p>
           </div>
-        </section>
-      </div>
+
+          <hr />
+
+          <div className="block">
+            <h3>Pronto para liderar no digital?</h3>
+          </div>
+
+          <div className="cta-button">
+            <a href="#contact" className="btn-secondary">
+              Fale com a gente
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
 
       <section className="portfolio-section">
         <Portfolio />

@@ -25,7 +25,7 @@
 .content-wrapper {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1745px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -74,10 +74,10 @@
   flex: 1 1 auto;
   width: 800px;
   height: 800px;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(255, 136, 168, 0.3);
-  margin-top: 45px; /* Desce 40px */
+  margin-top: 55px; /* Desce 40px */
 }
 /* Ajusta a responsividade para telas menores */
 @media (max-width: 1024px) {

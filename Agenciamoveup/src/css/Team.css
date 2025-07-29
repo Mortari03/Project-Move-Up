@@ -1,61 +1,140 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+/* Team.css */
 
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
-  color: #1d1d1b;
-}
-
+/* Container geral da página */
 .team-page {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.team-page h1 {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  font-weight: 600;
-}
-
-.team-carousel-wrapper {
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.photo-carousel .photo-card {
-  width: 100%;
-  height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-.photo-carousel .photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.info-carousel {
-  margin-top: 16px;
-}
-
-.info-carousel .info-card {
-  background-color: #eaeaea;
-  padding: 20px 20px;
-  border-radius: 12px;
-  min-height: 90px;
+  min-height: 108vh;
+  min-width: 100vw;
+  padding: 150px 20px 80px;
+  background: linear-gradient(135deg, #8a8a8a, hsla(0, 0%, 100%, 0.718));
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
 }
 
-.info-carousel .info-card p {
-  font-size: 1rem;
-  font-weight: 500;
+/* Título principal */
+.team-page > h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #f00040;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(255, 136, 168, 0.4);
+  user-select: none;
+}
+
+/* Wrapper dos dois sliders */
+.team-carousel-wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Slider principal - fotos */
+.photo-carousel {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.photo-card {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.photo-card img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 15px 30px rgba(240, 0, 64, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+}
+
+.photo-card.slick-current img {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(240, 0, 64, 0.5);
+}
+
+/* Slider de nomes */
+.info-carousel {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  user-select: none;
+}
+
+.info-card {
+  outline: none;
+  padding: 10px 20px;
+}
+
+.info-card p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f00040;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(255, 136, 168, 0.6);
   margin: 0;
-  line-height: 1.4;
+  cursor: default;
+}
+
+/* Slick dots customizado (caso queira usar dots) */
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #f00040;
+  opacity: 0.4;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #ff88a8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .team-page > h1 {
+    font-size: 2.4rem;
+  }
+
+  .photo-card img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .info-card p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-page {
+    padding: 40px 15px 60px;
+  }
+
+  .team-page > h1 {
+    font-size: 1.8rem;
+  }
+
+  .photo-card img {
+    width: 260px;
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .info-card p {
+    font-size: 1rem;
+  }
 }

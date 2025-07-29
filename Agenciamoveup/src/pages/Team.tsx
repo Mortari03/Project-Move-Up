@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -32,17 +32,36 @@ const members = [
 ];
 
 function Team() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const slider1 = useRef(null);
+  const slider2 = useRef(null);
+
+  useEffect(() => {
+    setNav1(slider1.current);
+    setNav2(slider2.current);
+  }, []);
+
+  
+  const settingsMain = {
+    asNavFor: nav2,
+    ref: slider1,
     arrows: false,
+    fade: true,
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 3500,
     pauseOnHover: false,
+  };
+
+  const settingsNav = {
+    asNavFor: nav1,
+    ref: slider2,
+    slidesToShow: 1,
+    swipeToSlide: true,
+    focusOnSelect: true,
+    arrows: false,
+    infinite: true,
   };
 
   return (
@@ -50,7 +69,8 @@ function Team() {
       <h1>Nosso Time</h1>
 
       <div className="team-carousel-wrapper">
-        <Slider {...settings} className="photo-carousel">
+        {/* Slider principal de fotos */}
+        <Slider {...settingsMain} className="photo-carousel">
           {members.map((member, index) => (
             <div className="photo-card" key={index}>
               <img src={member.image} alt={member.name} />
@@ -58,7 +78,8 @@ function Team() {
           ))}
         </Slider>
 
-        <Slider {...settings} className="info-carousel">
+        {/* Slider sincronizado de nomes */}
+        <Slider {...settingsNav} className="info-carousel">
           {members.map((member, index) => (
             <div className="info-card" key={index}>
               <p>{member.name}</p>

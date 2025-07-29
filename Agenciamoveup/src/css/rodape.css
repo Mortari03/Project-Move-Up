@@ -1,41 +1,63 @@
 .wolff-footer {
-  max-height: 100%;
-  background-color: #fff230;
-  color: black;
-  padding: 20px 40px;
-  font-family: "Arial Black", Arial, sans-serif;
+  background-color: #111;
+  color: #eee;
+  padding: 60px 20px 120px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.wolff-footer-logo-wrapper {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  transition: transform 0.5s ease, margin-bottom 0.5s ease;
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.wolff-footer-logo {
+  height: 150px;
+  transform-origin: center bottom;
+  transition: transform 0.5s ease;
+  user-select: none;
+  max-height: 100vh;
 }
 
 .wolff-footer-top {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 40px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-size: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.wolff-footer-year {
-  flex: 1;
-  min-width: 120px;
-  font-weight: normal;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .wolff-footer-links {
-  flex: 4;
   display: flex;
-  justify-content: space-around;
-  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  text-align: left;
+  margin-top: 40px;
 }
 
 .wolff-footer-links > div {
-  flex: 1;
-  min-width: 140px;
+  min-width: 200px;
 }
 
 .wolff-footer-links strong {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
 .wolff-footer-links ul {
@@ -44,61 +66,45 @@
   margin: 0;
 }
 
-.wolff-footer-links li {
-  margin: 6px 0;
+.wolff-footer-links ul li {
+  margin: 8px 0;
 }
 
-.wolff-footer-links a {
-  color: black;
+.wolff-footer-links ul li a {
+  color: #ff88a8;
   text-decoration: none;
-  font-weight: normal;
+  transition: color 0.3s ease;
 }
 
-.wolff-footer-links a:hover {
-  text-decoration: underline;
+.wolff-footer-links ul li a:hover {
+  color: #f00040;
+}
+
+.back-to-top {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .back-to-top a {
-  display: inline-block;
-  text-align: center;
-  font-weight: bold;
-  line-height: 1;
-  color: black;
+  color: #ff88a8;
+  font-weight: 700;
+  font-size: 1rem;
   text-decoration: none;
-  cursor: pointer;
-  user-select: none;
+  line-height: 1.2;
 }
 
 .back-to-top a:hover {
-  text-decoration: underline;
+  color: #f00040;
 }
 
-/* Logo grande com efeito esticado */
-.wolff-footer-logo {
-  font-size: 10vw;
-  font-weight: 900;
-  font-family: 'Arial Black', Arial, sans-serif;
-  letter-spacing: -0.04em;
-  white-space: nowrap;
-  transform-origin: center center;
-  margin-top: 20px;
-  user-select: none;
-  transition: transform 0.3s ease-out;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .wolff-footer-top {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .wolff-footer-links {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .wolff-footer-logo {
-    font-size: 20vw;
-    transform: scaleX(0.9);
-    text-align: center;
-  }
+.wolff-footer-year {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f00040;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
